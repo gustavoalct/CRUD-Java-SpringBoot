@@ -1,0 +1,3 @@
+ATUALIZACAO
+    nao utilizar o uso de @JsonManagedReference / JsonBackReference, pois apresentou erros de envio nas requisicoes
+    Trocar esses campos por apenas Jsonignore
