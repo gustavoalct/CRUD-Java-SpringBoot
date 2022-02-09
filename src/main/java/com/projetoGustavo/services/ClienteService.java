@@ -16,7 +16,7 @@ public class ClienteService {
     private ClienteRepository repo; // declara a dependencia ao repositorio, repo serve para buscar no banco de dados com certo Id
 
     // buscar uma categoria por codigo
-    public Optional<Cliente> buscar(Integer id){
+    public Optional<Cliente> find(Integer id){
 
         Optional<Cliente> obj = repo.findById(id);
 

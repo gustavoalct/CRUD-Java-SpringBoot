@@ -16,7 +16,6 @@ public class Categoria implements Serializable {
     //serializable os objetos dela poderao ser convertidos em sequencia de bites
     // isso serve para que os objetos podem ser salvos em arquivos, trafegar em rede etc, EXIGENCIA DO JAVA
 
-
     // atributos basicos
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Definindo a geracao automatica do banco de dados  para o banco h2
@@ -24,10 +23,8 @@ public class Categoria implements Serializable {
     private String nome;
 
     //@JsonManagedReference // referencia gerenciada pelo json, faz isso onde vc quer q venha os objetos associados
-    @JsonIgnore
-    // ligando tabelas
-    @ManyToMany(mappedBy = "categorias")
-    // Instanciando o produto, que sera ligado posteriormente, ou seja importando os dados
+    // @JsonIgnore// ligando tabelas
+    @ManyToMany(mappedBy = "categorias")// Instanciando o produto, que sera ligado posteriormente, ou seja importando os dados
     private List<Produto> produtos = new ArrayList<>();
 
     // construtor vazio --> instancio o objeto sem jogar nada para os atributos
@@ -51,13 +48,11 @@ public class Categoria implements Serializable {
     }
 
     public String getNome() {
-
         return nome;
     }
 
     public void setNome(String nome) {
-
-        this.nome = nome;
+       this.nome = nome;
     }
 
     // Get e setter no produto

@@ -24,7 +24,7 @@ public class ClienteResource {
 
     @RequestMapping(value="/{id}",method=RequestMethod.GET) //id entra apos categorias, busca o elemento
     public ResponseEntity<?> find(@PathVariable Integer id){ // muda o nome do metodo para find, pathVariable taca o valor para method request acima
-        Optional<Cliente> obj = service.buscar(id);
+        Optional<Cliente> obj = service.find(id);
 
         return ResponseEntity.ok().body(obj); // retorna somente caso de certo
     }
