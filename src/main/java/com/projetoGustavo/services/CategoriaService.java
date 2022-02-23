@@ -1,6 +1,7 @@
 package com.projetoGustavo.services;
 
 
+import com.projetoGustavo.DTO.CategoriaDTO;
 import com.projetoGustavo.domain.Categoria;
 import com.projetoGustavo.repositories.CategoriaRepository;
 import com.projetoGustavo.services.exceptions.ObjectNotFoundException;
@@ -58,6 +59,10 @@ public class CategoriaService {
     public Page<Categoria> findPage(Integer page, Integer linesPerPage, String orderBy, String direction){  // linhas por pagina, orderBy ordenacao dos atributos, direction descendende ou ascendente
         PageRequest pageRequest = PageRequest.of(page,linesPerPage,   Sort.Direction.valueOf(direction) , orderBy);
         return repo.findAll(pageRequest);
+    }
+
+    public Categoria fromDTO(CategoriaDTO objDTO ){
+        return new Categoria(objDTO.getId(), objDTO.getNome());
     }
 
 }

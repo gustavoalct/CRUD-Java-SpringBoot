@@ -30,7 +30,7 @@ public abstract class Pagamento  implements Serializable { // o abstract nao dei
      public Pagamento (){
 
      }
-••••••••••
+
     public Pagamento(Integer id, EstadoPagamento estado, Pedido pedido) {
         this.id = id;
         this.estado = estado.getCod();

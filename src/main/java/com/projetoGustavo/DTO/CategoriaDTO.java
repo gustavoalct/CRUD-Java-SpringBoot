@@ -1,12 +1,16 @@
 package com.projetoGustavo.DTO;
 
 import com.projetoGustavo.domain.Categoria;
+import org.hibernate.validator.constraints.Length;
 
+import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
 
 public class CategoriaDTO implements Serializable {
 
     private Integer id;
+    @NotEmpty(message = "Campo obrigatorio")
+    @Length(min = 3, max =80, message="Tamanho Errado")
     private String nome;
 
     public  CategoriaDTO(){
